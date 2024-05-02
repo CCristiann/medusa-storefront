@@ -4,6 +4,7 @@ import { getCategoriesList, getCollectionsList } from "@lib/data"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
+import { Logo } from "@modules/common/components/logo"
 
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
@@ -13,13 +14,15 @@ export default async function Footer() {
     <footer className="border-t border-ui-border-base w-full">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
-          <div>
+
+          <div className="flex flex-col max-w-sm">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              className="relative w-32 h-16"
             >
-              Medusa Store
+              <Logo fill />
             </LocalizedClientLink>
+            <p className="txt-small-plus txt-ui-fg-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, asperiores voluptates!</p>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {product_categories && product_categories?.length > 0 && (
@@ -104,37 +107,10 @@ export default async function Footer() {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Medusa</span>
+              <span className="txt-small-plus txt-ui-fg-base">Contacts</span>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
                 <li>
-                  <a
-                    href="https://github.com/medusajs"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
-                  >
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://docs.medusajs.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
-                  >
-                    Documentation
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/medusajs/nextjs-starter-medusa"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
-                  >
-                    Source code
-                  </a>
+                  <span>cirjecristian@icloud.com</span>
                 </li>
               </ul>
             </div>
